@@ -1,37 +1,24 @@
 package com.abhi.prj.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Resume {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
     private String name;
     private String email;
-    private String phone;
-    private String skills;
-    private String experience;
-    
-    public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private String contact;
+    private List<String> education;
+    private List<String> skills;
+    private List<String> projects;
+    private List<String> workExperience;
 	public String getName() {
 		return name;
 	}
@@ -44,22 +31,42 @@ public class Resume {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhone() {
-		return phone;
+	public String getContact() {
+		return contact;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
-	public String getSkills() {
+	public List<String> getEducation() {
+		return education;
+	}
+	public void setEducation(List<String> education) {
+		this.education = education;
+	}
+	public List<String> getSkills() {
 		return skills;
 	}
-	public void setSkills(String skills) {
+	public void setSkills(List<String> skills) {
 		this.skills = skills;
 	}
-	public String getExperience() {
-		return experience;
+	public List<String> getProjects() {
+		return projects;
 	}
-	public void setExperience(String experience) {
-		this.experience = experience;
+	public void setProjects(List<String> projects) {
+		this.projects = projects;
 	}
+	public List<String> getWorkExperience() {
+		return workExperience;
+	}
+	public void setWorkExperience(List<String> workExperience) {
+		this.workExperience = workExperience;
+	}
+	/*
+	 * public Resume(String name, String email, String contact, List<String>
+	 * education, List<String> skills, List<String> projects, List<String>
+	 * workExperience) { super(); this.name = name; this.email = email; this.contact
+	 * = contact; this.education = education; this.skills = skills; this.projects =
+	 * projects; this.workExperience = workExperience; }
+	 */
+
 }
